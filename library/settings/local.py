@@ -10,7 +10,7 @@ DATABASES = {
         'NAME': 'dblibrary',
         'USER': 'joseadb',
         'PASSWORD': 'djangopass',
-        'PORT': ('5432'),
+        'PORT': '5432',
     }
 }
 
