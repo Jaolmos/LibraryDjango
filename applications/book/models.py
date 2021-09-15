@@ -10,7 +10,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-class Libro(models.Model):
+class Book(models.Model):
     title = models.CharField(max_length=60, verbose_name='Title')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Category')
     authors = models.ManyToManyField(Author, verbose_name='Autor')
