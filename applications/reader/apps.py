@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AutorConfig(AppConfig):
+class ReaderConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'autor'
+    name = 'reader'
