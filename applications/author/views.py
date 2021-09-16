@@ -1,3 +1,14 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.views.generic import ListView
+
+from . models import Author
+
+class ListAuthors(ListView):
+    context_object_name = 'list_authors'
+    template_name = "author/list.html"
+
+    def get_queryset(self):
+        
+        return Author.objects.all()
+
