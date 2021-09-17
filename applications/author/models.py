@@ -12,5 +12,11 @@ class Author(models.Model):
 
     objects = AuthorManager()
 
+    class Meta:
+        verbose_name = 'Author'
+        verbose_name_plural = 'Authors'
+        ordering = ['first_name']
+
+
     def __str__(self):
         return self.first_name 
