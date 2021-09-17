@@ -9,5 +9,5 @@ class ListAuthors(ListView):
 
     def get_queryset(self):
         kword = self.request.GET.get('keyword','')
-        return Author.objects.search_author(kword)
+        return Author.objects.search_author2(kword)
 
