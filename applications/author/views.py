@@ -9,6 +9,6 @@ class ListAuthors(ListView):
     template_name = 'author/list.html'
 
     def get_queryset(self):
-        keyword = self.request.GET.get('kword','')
-        return Author.objects.search_author(keyword)
+        kword = self.request.GET.get('keyword','')
+        return Author.objects.search_author(kword)
 
