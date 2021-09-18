@@ -1,0 +1,17 @@
+<h1>List of books</h1>
+
+<p>
+    <form method="GET">{% csrf_token %}
+        <input type="text" id="keyword" name="keyword" placeholder="enter name">
+        <button type="submit">Consult</button>
+    </form>
+</p>
+
+
+<ul>
+    
+    {% for b in  list_books %}
+        <li> {{ b.title }} </li>
+    {% endfor %}
+        
+</ul>
