@@ -1,6 +1,5 @@
 from django.db import models
 
-from django.db.models import Q
 
 class BookManager(models.Manager):
 
@@ -9,9 +8,6 @@ class BookManager(models.Manager):
         
         return outcome
 
-    '''def search_book2(self, keyword):
-        outcome = self.filter(
-            Q(first_name__icontains=keyword) | Q(last_name__icontains=keyword)
-            )
-        
-        return outcome'''
+    def list_books_category(self, category):
+
+        return self.filter(category__id=category).order_by('title')
