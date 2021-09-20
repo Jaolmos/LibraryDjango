@@ -14,4 +14,4 @@ class BookManager(models.Manager):
 class CategoryManager(models.Manager):
 
     def category_by_author(self, author):
-        return self.filter(book_category__authors__id=author)        
+        return self.filter(book_category__authors__id=author).distinct()       
