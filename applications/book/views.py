@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from . models import Book
 from . managers import BookManager
 
@@ -18,3 +18,9 @@ class ListBooks2(ListView):
 
     def get_queryset(self):
         return Book.objects.list_books_category('2')
+
+
+
+class BookDetailView(DetailView):
+    model = Book
+    template_name = "book/detail.html"

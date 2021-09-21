@@ -10,6 +10,11 @@ class BookManager(models.Manager):
     def list_books_category(self, category):
         return self.filter(category__id=category).order_by('title')
 
+    def add_author_book(self, book_id, author):
+        book = self.get(id=book_id) 
+        book.authors.add(author)
+        return book
+
 
 class CategoryManager(models.Manager):
 

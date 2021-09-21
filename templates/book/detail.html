@@ -1,0 +1,15 @@
+<h1>Book detail</h1>
+
+<p>{{ book.title }}</p>
+<p>{{ book.category }}</p>
+<p>{{ book.date }}</p>
+
+<p>************manytomany************</p>
+
+<ul>
+    
+    {% for author in book.authors.all  %}
+        <li>{{ author }}</li>
+    {% endfor %}
+        
+</ul>
