@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.aggregates import Count
 
 
 class BookManager(models.Manager):
@@ -19,4 +20,13 @@ class BookManager(models.Manager):
 class CategoryManager(models.Manager):
 
     def category_by_author(self, author):
-        return self.filter(book_category__authors__id=author).distinct()       
+        return self.filter(book_category__authors__id=author).distinct()   
+
+    def list_category_books(self):
+        outcome = self.annotate(number_of_books=Count('book_category'))
+        for o in outcome:
+            print('**********')
+            print(o, o.book_category)
+        return outcome
+            
+        
