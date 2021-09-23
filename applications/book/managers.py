@@ -16,6 +16,10 @@ class BookManager(models.Manager):
         book.authors.add(author)
         return book
 
+    def books_loan_number(self):
+        outcome = self.aggregate(loan_number=Count('book_loan'))
+        return outcome
+
 
 class CategoryManager(models.Manager):
 

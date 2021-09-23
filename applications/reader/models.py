@@ -14,7 +14,7 @@ class Reader(models.Model):
 
 class Loan(models.Model):
     reader = models.ForeignKey(Reader, on_delete=models.CASCADE)
-    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='book_loan')
     loan_date = models.DateField()
     return_date = models.DateField(blank=True, null=True)
     returned_book = models.BooleanField()
