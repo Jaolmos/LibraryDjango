@@ -2,6 +2,8 @@ from django.db import models
 
 from applications.book.models import Book
 
+from .managers import LoanManager
+
 class Reader(models.Model):
     first_name = models.CharField(max_length=60,verbose_name='First name')
     last_name = models.CharField(max_length=60, verbose_name='Last name')
@@ -18,6 +20,7 @@ class Loan(models.Model):
     loan_date = models.DateField()
     return_date = models.DateField(blank=True, null=True)
     returned_book = models.BooleanField()
+    objects = LoanManager()
     
     def __str__(self):
         return self.book.title
